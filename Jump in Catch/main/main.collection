@@ -67,7 +67,7 @@ instances {
   id: "chao8"
   prototype: "/main/chao.go"
   position {
-    x: 400.198
+    x: 404.198
     y: 0.255584
   }
 }
@@ -125,6 +125,30 @@ instances {
   position {
     x: 15.667896
     y: 39.22824
+  }
+}
+instances {
+  id: "chao15"
+  prototype: "/main/chao.go"
+  position {
+    x: 203.19801
+    y: 0.255584
+  }
+}
+instances {
+  id: "chao16"
+  prototype: "/main/chao.go"
+  position {
+    x: 436.198
+    y: 0.255584
+  }
+}
+instances {
+  id: "vilao"
+  prototype: "/main/vilao.go"
+  position {
+    x: 286.3867
+    y: 46.79139
   }
 }
 scale_along_z: 0
