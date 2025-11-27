@@ -1,3 +1,7 @@
+components {
+  id: "enemy"
+  component: "/main/assets/scripts/enemy.script"
+}
 embedded_components {
   id: "sprite"
   type: "sprite"
@@ -19,7 +23,7 @@ embedded_components {
   "mass: 0.0\n"
   "friction: 0.1\n"
   "restitution: 0.5\n"
-  "group: \"enemy\"\n"
+  "group: \"vilao\"\n"
   "mask: \"ground\"\n"
   "mask: \"player\"\n"
   "embedded_collision_shape {\n"
