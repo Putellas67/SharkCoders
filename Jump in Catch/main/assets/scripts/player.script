@@ -4,7 +4,7 @@ function init(self)
 
 	self.vida = 3 -- self significa atributo que damos ao que está associado ao script 
 	self.iframes = false
-	self.time_iframes = 5.0 --segundos de invencibilidade
+	self.time_iframes = 1.0 --segundos de invencibilidade
 	self.timer_iframes = 0
 	self.input = {
 		left = false,
@@ -85,8 +85,12 @@ function reset_game(self)
 	self.iframes = false 
 	self.timer_iframes = 0
 	self.time_iframes = 1.0
+	
 	-- reset player position
 	go.set_position(vmath.vector3(235, 231, 0))
+
+	--reset do texto das vidas
+	msg.post("main:/interface#interface", "atualizar_vida", {valor = self.vida})
 end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("contact_point_response") then
@@ -104,8 +108,7 @@ function on_message(self, message_id, message, sender)
 		elseif message.other_group == hash("vilao") then
 			if not self.iframes then
 				self.vida = self.vida - 1
-				print("vida:".. self.vida)
-
+				msg.post("main:/interface#interface", "atualizar_vida", {valor = self.vida})
 				self.iframes = true
 				self.timer_iframes = self.time_iframes
 

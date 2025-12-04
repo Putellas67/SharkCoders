@@ -151,4 +151,12 @@ instances {
     y: 46.79139
   }
 }
+instances {
+  id: "interface"
+  prototype: "/main/interface.go"
+  position {
+    x: -109.05383
+    y: -350.97717
+  }
+}
 scale_along_z: 0
