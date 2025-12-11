@@ -159,4 +159,12 @@ instances {
     y: -350.97717
   }
 }
+instances {
+  id: "item"
+  prototype: "/main/item.go"
+  position {
+    x: 411.3505
+    y: 46.179615
+  }
+}
 scale_along_z: 0
