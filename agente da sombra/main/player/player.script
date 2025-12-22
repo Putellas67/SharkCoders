@@ -1,0 +1,20 @@
+go.property("speed", 100)
+
+function init(self)
+
+	self.input = {
+		left = false,
+		right = false,
+		up = false,
+		down = false
+	}
+
+	self.vel = vmath.vector3(0, 0, 0)
+
+	msg.post(".", "acquire_input_focus")
+end
+
+if self.input.left then dir.y = dir.y - 1 
+	if self.input.right then dir.y = dir.y + 1
+	end
+end

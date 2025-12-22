@@ -1,0 +1,31 @@
+images {
+  image: "/main/assets/pixel/background.png"
+}
+images {
+  image: "/main/assets/pixel/clothes.png"
+}
+images {
+  image: "/main/assets/pixel/doc.png"
+}
+images {
+  image: "/main/assets/pixel/enemy.png"
+}
+images {
+  image: "/main/assets/pixel/exit.png"
+}
+images {
+  image: "/main/assets/pixel/hidden.png"
+}
+images {
+  image: "/main/assets/pixel/key.png"
+}
+images {
+  image: "/main/assets/pixel/table.png"
+}
+images {
+  image: "/main/assets/pixel/thing.png"
+}
+images {
+  image: "/main/assets/pixel/wall.png"
+}
+extrude_borders: 2
