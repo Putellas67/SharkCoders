@@ -12,6 +12,8 @@ images {
 }
 images {
   image: "/main/assets/pixel/exit.png"
+  pivot_x: 1.756848
+  pivot_y: 1.690698
 }
 images {
   image: "/main/assets/pixel/hidden.png"

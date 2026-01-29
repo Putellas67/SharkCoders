@@ -1,0 +1,37 @@
+fonts {
+  name: "always_on_top"
+  font: "/builtins/fonts/debug/always_on_top.font"
+}
+nodes {
+  position {
+    x: 102.0
+    y: 588.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "missions complete\n"
+  ""
+  font: "always_on_top"
+  id: "missoes"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 99.0
+    y: 539.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "Get all documents: 3"
+  font: "always_on_top"
+  id: "points"
+  inherit_alpha: true
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
