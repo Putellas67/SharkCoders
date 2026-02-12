@@ -1,3 +1,4 @@
+script: "/main/gui/interface.gui_script"
 fonts {
   name: "always_on_top"
   font: "/builtins/fonts/debug/always_on_top.font"
@@ -32,6 +33,30 @@ nodes {
   font: "always_on_top"
   id: "points"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: 446.0
+    y: 289.0
+  }
+  scale {
+    x: -6.752214
+    y: -7.356733
+    z: -3.2
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "box"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

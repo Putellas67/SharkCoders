@@ -1,3 +1,7 @@
+components {
+  id: "background"
+  component: "/main/assets/sound/background.sound"
+}
 embedded_components {
   id: "sprite"
   type: "sprite"

@@ -493,4 +493,12 @@ instances {
     y: 632.8222
   }
 }
+instances {
+  id: "interface"
+  prototype: "/main/gui/interface.go"
+  position {
+    x: 21.307676
+    y: 40.99382
+  }
+}
 scale_along_z: 0

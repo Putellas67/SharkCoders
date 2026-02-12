@@ -20,11 +20,14 @@ function init(self)
 	self.total_documentos = 3
 
 	-- Mostrar missões e pontos no início
-	msg.post("main:/interface#interface", "atualizar_pontos", { valor = self.pontos })
-	msg.post("main:/interface#interface", "atualizar_missoes", { lista = self.missoes })
+	msg.post("/interface#interface", "atualizar_pontos", { valor = self.pontos })
+	msg.post("/interface#interface", "atualizar_missoes", { lista = self.missoes })
 
 	
 	msg.post(".", "acquire_input_focus")
+
+	sound.play("background")
+	sound.play("catch_item")
 end
 
 function update(self, dt)
@@ -70,14 +73,22 @@ function on_input(self, action_id, action)
 			self.input.down = false
 		end
 	end
+	local isMoving = self.input.up or self.input.down or self.input.left or self.input.right
+	if isMoving and not isSoundPlaying then
+		sound.play("#footsteps")
+		isSoundPlaying = true
+	elseif isSoundPlaying and not isMoving then
+		sound.stop("#footsteps")
+		isSoundPlaying = false
+	end
 end
 
 function concluir_missao(self, indice)
 	if not self.missoes[indice].concluida then
 		self.missoes[indice].concluida = true
 		self.pontos = self.pontos + self.missoes[indice].pontos
-		msg.post("main:/interface#interface", "atualizar_pontos", { valor = self.pontos })
-		msg.post("main:/interface#interface", "atualizar_missoes", { lista = self.missoes })
+		msg.post("/interface#interface", "atualizar_pontos", { valor = self.pontos })
+		msg.post("/interface#interface", "atualizar_missoes", { lista = self.missoes })
 	end
 end
 
@@ -110,7 +121,9 @@ function on_message(self, message_id, message, sender)
 		end
 		-- colisão com guarda
 		if message.other_group == hash("enemy") then
+			sound.play("#fx")
 			print("Jogador detectado!")
+			msg.post("main:/interface", "flash_alerta")
 		end
 	end
 end

@@ -1,10 +1,10 @@
 go.property("speed", 70) -- pode ser diferente
-go.property("top_limit", 627) -- depende da posição (e da direçãobdo movimento: aqui são valores de Y)
-go.property("bottom_limit", 97) -- depende da posição (e da direçãobdo movimento: aqui são valores de Y)
+go.property("top_limit", 550) -- depende da posição (e da direçãobdo movimento: aqui são valores de Y)
+go.property("bottom_limit", 200) -- depende da posição (e da direçãobdo movimento: aqui são valores de Y)
 
 function init(self)
 	self.dir = 1
-	go.set(".", "scale.y", go.get(".", "scale") * -1) -- flip vertical(opcional - depende do sprite usado)
+	go.set(".", "scale.y", go.get(".", "scale.x") * -1) -- flip vertical(opcional - depende do sprite usado)
 end
 
 function update(self, dt)

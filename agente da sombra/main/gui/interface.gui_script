@@ -8,5 +8,14 @@ function on_message(self, message_id, message)
 			texto_final = texto_final .. estado .. " " .. m.texto .. "\n"
 		end
 		gui.set_text(gui.get_node("missoes"), texto_final)
+	elseif message_id == hash("flash_alerta") then
+		flash_alerta()
 	end
+end
+
+
+function flash_alerta()
+	local node = gui.get_node("box")
+	gui.set_color(node, vmath.vector4(1, 0, 0, 0.5))
+	gui.animate(node, "color.w", 0, gui.EASING_OUT, 0.5)
 end

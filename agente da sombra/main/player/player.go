@@ -2,6 +2,22 @@ components {
   id: "player"
   component: "/main/player/player.script"
 }
+components {
+  id: "fx"
+  component: "/main/assets/sound/fx.sound"
+}
+components {
+  id: "footsteps"
+  component: "/main/assets/sound/footsteps.sound"
+}
+components {
+  id: "background"
+  component: "/main/assets/sound/background.sound"
+}
+components {
+  id: "catch item"
+  component: "/main/assets/sound/catch_item.sound"
+}
 embedded_components {
   id: "sprite"
   type: "sprite"
@@ -23,6 +39,7 @@ embedded_components {
   "group: \"player\"\n"
   "mask: \"documento\"\n"
   "mask: \"exit\"\n"
+  "mask: \"enemy\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
