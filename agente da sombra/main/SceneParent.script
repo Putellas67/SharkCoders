@@ -1,0 +1,13 @@
+local GameManager = require("main.scripts-GameManager")
+
+local function switch_to_scene(new_scene)
+	if new_scene == "level" then
+		GamaManager.current_level = new_scene
+		msg.post("#menu", "unload")
+		msg.post("#level", "load")
+	elseif new_scene == "menu" then
+		GamaManager.current_level = new_scene
+		msg.post("#level", "unload")
+		msg.post("#menu", "load")
+	end
+end

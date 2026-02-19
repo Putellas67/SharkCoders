@@ -1,0 +1,14 @@
+name: "menu"
+instances {
+  id: "menu"
+  prototype: "/main/gui/menu.go"
+  position {
+    x: -5.806039
+    y: 2.769292
+  }
+  scale3 {
+    x: 18.1384
+    y: 16.159796
+  }
+}
+scale_along_z: 0
