@@ -1,4 +1,4 @@
-local GameManager = require("main.scripts-GameManager")
+local GameManager = require("main.scripts.GameManager")
 
 local function switch_to_scene(new_scene)
 	if new_scene == "level" then
@@ -9,5 +9,19 @@ local function switch_to_scene(new_scene)
 		GamaManager.current_level = new_scene
 		msg.post("#level", "unload")
 		msg.post("#menu", "load")
+	end
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	msg.post("#menu", "load")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("proxy_loaded") then
+		msg.post(sender, "enable")
+	end
+	if message_id == hash("change_scene") and message.scene then
+		switch_to_scene(message.scene)
 	end
 end

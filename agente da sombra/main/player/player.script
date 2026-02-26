@@ -123,7 +123,7 @@ function on_message(self, message_id, message, sender)
 		if message.other_group == hash("enemy") then
 			sound.play("#fx")
 			print("Jogador detectado!")
-			msg.post("main:/interface", "flash_alerta")
+			msg.post("Game:/interface", "flash_alerta")
 		end
 	end
 end

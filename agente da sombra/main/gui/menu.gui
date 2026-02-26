@@ -1,3 +1,4 @@
+script: "/main/scripts/mainmenu.gui_script"
 fonts {
   name: "always_on_top"
   font: "/builtins/fonts/debug/always_on_top.font"
