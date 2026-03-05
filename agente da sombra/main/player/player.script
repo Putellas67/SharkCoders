@@ -19,6 +19,8 @@ function init(self)
 	self.documentos_coletados = 0
 	self.total_documentos = 3
 
+	self.items = {}
+	
 	-- Mostrar missões e pontos no início
 	msg.post("/interface#interface", "atualizar_pontos", { valor = self.pontos })
 	msg.post("/interface#interface", "atualizar_missoes", { lista = self.missoes })
@@ -119,11 +121,37 @@ function on_message(self, message_id, message, sender)
 				concluir_missao(self, 1) -- missão 2 concluida
 			end
 		end
+		if message.other_group == hash("exit") then
+			if self.missoes[1].concluida then
+				print("ola")
+				concluir_missao(self, 2)
+				msg.post("Game:/interface", "flash_finish")
+			end
+		end
 		-- colisão com guarda
 		if message.other_group == hash("enemy") then
 			sound.play("#fx")
 			print("Jogador detectado!")
 			msg.post("Game:/interface", "flash_alerta")
+		end
+	end
+end
+
+local tenhoDisfarce = false
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("contact_point_response") then
+		if message.normal.y > 0.1 then
+
+			-- Colisão com disfarce
+			if message.other_group == hash("clothes") then
+				table.insert(self.items, message.item)
+				tenhoDisfarce = true
+				print("Roupa ".. tostring(tenhoDisfarce)) -- debug
+				print(self.items) -- debug
+				go.delete(message.other_id)
+				msg.post("game:/interface", "disguise")
+			end
 		end
 	end
 end

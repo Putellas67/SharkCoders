@@ -501,4 +501,16 @@ instances {
     y: 40.99382
   }
 }
+instances {
+  id: "mask"
+  prototype: "/main/mask.go"
+  position {
+    x: 754.2078
+    y: 351.43686
+  }
+  scale3 {
+    x: 2.723063
+    y: 4.917322
+  }
+}
 scale_along_z: 0

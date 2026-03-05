@@ -3,6 +3,10 @@ fonts {
   name: "always_on_top"
   font: "/builtins/fonts/debug/always_on_top.font"
 }
+textures {
+  name: "main"
+  texture: "/main/assets/main.atlas"
+}
 nodes {
   position {
     x: 102.0
@@ -57,6 +61,68 @@ nodes {
   inherit_alpha: true
   alpha: 0.0
   size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 590.0
+    y: 286.0
+  }
+  scale {
+    x: 9.344074
+    y: 7.795133
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "box1"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 176.0
+    y: 136.0
+  }
+  type: TYPE_BOX
+  texture: "main/clothes"
+  id: "clothing"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 434.0
+    y: 176.0
+  }
+  type: TYPE_BOX
+  texture: "main/key"
+  id: "key"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 212.0
+    y: 279.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "<text>"
+  font: "always_on_top"
+  id: "text"
+  inherit_alpha: true
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

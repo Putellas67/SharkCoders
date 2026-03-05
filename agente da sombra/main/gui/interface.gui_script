@@ -23,7 +23,7 @@ function flash_alerta()
 end
 
 function flash_finish()
-	local node = gui.get_node("box")
-	gui.set_color(node, vmath.vector4(1, 0, 0, 0.5))
+	local node = gui.get_node("box1")
+	gui.set_color(node, vmath.vector4(0, 1, 0, 0.5))
 	gui.animate(node, "color.w", 0, gui.EASING_OUT, 0.5)
 end
